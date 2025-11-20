@@ -3,17 +3,18 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code, Palette, Zap, Heart } from "lucide-react";
+import { Code, Palette, Zap, Heart, Sparkles } from "lucide-react";
 
 export function About() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     const skills = [
-        { icon: Code, label: "Web Development", color: "text-primary" },
-        { icon: Palette, label: "UI/UX Design", color: "text-accent" },
-        { icon: Zap, label: "Performance", color: "text-primary-dark" },
-        { icon: Heart, label: "User Experience", color: "text-accent" },
+        { icon: Code, label: "Full-stack / Front-end Development", color: "text-primary" },
+        { icon: Palette, label: "UI/UX & Interactive Web Experiences", color: "text-accent" },
+        { icon: Zap, label: "UML & System Modelling", color: "text-primary-dark" },
+        { icon: Heart, label: "Clean, Structured Problem-Solving", color: "text-accent" },
+        { icon: Sparkles, label: "AI Prompt Engineering", color: "text-primary" },
     ];
 
     return (
@@ -61,22 +62,18 @@ export function About() {
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
                         <h3 className="text-3xl font-bold mb-6">
-                            Passionate about creating exceptional digital experiences
+                            Developer who thinks like a designer
                         </h3>
-                        <p className="text-lg text-muted mb-6 leading-relaxed">
-                            I'm a creative professional with a passion for crafting beautiful,
-                            functional, and user-centered digital products. With years of
-                            experience in design and development, I bring ideas to life through
-                            clean code and thoughtful design.
+                        <p className="text-lg text-muted mb-4 leading-relaxed">
+                            I'm a developer who thinks like a designer.
+                            I enjoy building visual-first, interactive, and modern web experiences.
                         </p>
                         <p className="text-lg text-muted mb-8 leading-relaxed">
-                            My approach combines technical expertise with creative thinking,
-                            always focusing on delivering solutions that not only look great
-                            but also solve real problems and create value.
+                            I like solving problems, designing intuitive flows, and turning ideas into polished interfaces.
                         </p>
 
                         {/* Skills Grid */}
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 gap-3">
                             {skills.map((skill, index) => (
                                 <motion.div
                                     key={skill.label}
@@ -86,7 +83,7 @@ export function About() {
                                     className="flex items-center gap-3 p-4 bg-card border border-border rounded-xl hover:border-primary transition-colors"
                                 >
                                     <skill.icon className={`w-6 h-6 ${skill.color}`} />
-                                    <span className="font-semibold">{skill.label}</span>
+                                    <span className="font-semibold text-sm md:text-base">{skill.label}</span>
                                 </motion.div>
                             ))}
                         </div>
